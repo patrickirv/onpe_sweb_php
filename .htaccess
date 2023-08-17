@@ -1,0 +1,33 @@
+Options +FollowSymLinks
+Options All -Indexes
+
+RewriteEngine On
+
+#/participacion
+RewriteRule ^(\w+)$ sweb.php?id=$1
+
+#/participacion/Nacional
+#/actas/ubigeo
+RewriteRule ^(\w+)/(\w+)$ sweb.php?id=$1/$2
+
+#/participacion/Nacional/Departamento
+#/actas/numero/000001
+#/actas/ubigeo/
+RewriteRule ^(\w+)/(\w+)/(\w+)$ sweb.php?id=$1/$2/$3
+
+#/participacion/Nacional/Departamento/Provincia
+RewriteRule ^(\w+)/(\w+)/(\w+)/(\w+)$ sweb.php?id=$1/$2/$3/$4
+
+#/participacion/Nacional/Departamento/Provincia/Distrito
+RewriteRule ^(\w+)/(\w+)/(\w+)/(\w+)/(\w+)$ sweb.php?id=$1/$2/$3/$4/$5
+
+#/actas/ubigeo/#Departamento
+RewriteRule ^(\w+)/(\w+)/([0-9]+)$ sweb.php?id=$1/$2/$3
+
+#/cines/#/tarifas
+#/cines/#/peliculas
+#/RewriteRule ^(\w+)/([0-9]+)/(\w+)$ sweb.php?id=$1&idd=$2&idx=$3
+
+#/peliculas/cartelera
+#/peliculas/estrenos
+#/RewriteRule ^(\w+)/(\w+)$ sweb.php?id=$1&idx=$2
